@@ -38,7 +38,10 @@
 
 ## Для запуска ноутбука c моделями необходимо:
 * Скачать [датасет](https://drive.google.com/drive/folders/1kn1HLN-Z_GG5leX4xJLa9waT1MQSvC9O?usp=sharing) для бинарной классификации
+* Скачать [датасет](https://drive.google.com/drive/folders/1sUGHBw7gvrmB2ISi5D3lbAsQIvABTagc?usp=sharing) для классификации по типам
 * Скачать [модель EfficientNetB7](https://drive.google.com/file/d/1rPa8nbNrb-bJ9r3EKP_ft8bQjESeF2n6/view?usp=sharing)
 * Отредактировать ячейки ноутбука, содержащие пути к файлам в соответствии с вашей архитектурой проекта
 * Всё готово
-* Для Семёна [модель в формате .pkl](https://drive.google.com/file/d/1ZJfF9WSIP8SogkLLUh9DPQ0rPJ0wOa4N/view?usp=sharing)
+## Pickle файлы
+* Бинарная [модель](https://drive.google.com/file/d/1ZJfF9WSIP8SogkLLUh9DPQ0rPJ0wOa4N/view?usp=sharing) в формате .pkl
+* [Модель](https://drive.google.com/file/d/14_k28veTz0XibA50E8vNByuVxTWDoo9N/view?usp=sharing) для классификации по типам в формате .pkl
