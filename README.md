@@ -38,10 +38,10 @@
 
 
 ## Как воспроизвести результаты:
-- [ ] [Скачайте датасет тут:](https://drive.google.com/drive/folders/1Guo7Zlihq33DO-pcYLWwS537KK3oOwNS)
-- [ ] Используйте ``` ##такие ``` то модели
-- [ ] Можете обучить сами, а можете взять [picckles](pass) с уже готовыми весами.
-- [ ] Все необходимые зависимости найдете в файле [requirments.txt](pass)
+- [ ] [Скачайте датасет тут:][https://drive.google.com/drive/folders/1Guo7Zlihq33DO-pcYLWwS537KK3oOwNS](https://drive.google.com/drive/folders/1kn1HLN-Z_GG5leX4xJLa9waT1MQSvC9O)
+- [ ] Скачайте модель [EfficientNetB7](https://drive.google.com/file/d/1rPa8nbNrb-bJ9r3EKP_ft8bQjESeF2n6/view)
+- [ ] Отредактируёте ячейку ноутбука, содержащую пути к файлам, в соответствии с вашей архитектурой проекта.
+- [ ] Можите обучить модель сами, а можите взять готовый [pkl](https://drive.google.com/file/d/1ZJfF9WSIP8SogkLLUh9DPQ0rPJ0wOa4N/view) файл.
 
 ## Немного статистики
 В текущем году, по оценкам Рослесинфорга (структура Рослесхоза), объем собранных в российских лесах грибов побьет прошлогодний рекорд — в 2022 году в коммерческих целях в лесах собрали 834 т грибов.
