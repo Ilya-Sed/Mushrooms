@@ -10,22 +10,26 @@ import sklearn
 from io import BytesIO
 import torchvision.transforms as transforms
 import torch
+import tensorflow as tf
+from keras.models import load_model
 
-TOKEN_API = "6841493307:AAFEZptlHBiv7uMLqOIoejZINWTDyEVSAk8"
+
+TOKEN_API = ""
 bot = Bot(TOKEN_API)
 dp = Dispatcher(bot)
 
 URI_INFO = f"https://api.telegram.org/bot{TOKEN_API}/getFile?file_id="
 URI = f"https://api.telegram.org/file/bot{TOKEN_API}/"
 
-model = pickle.load(open("model.pkl", "rb"))
-
+model = load_model('my_model.h5')
+img_width = 227
+img_height = 227
+class_names = ['съедобный гриб', 'ядовитый гриб']
 
 def fit_range(x):
     k = (1920 - 144) / (5 - 1)
     d = 144 - 5 * k
     return x * k + d
-
 
 @dp.message_handler(content_types=['photo'])
 async def process_photo(msg: types.Message) -> None:
@@ -44,24 +48,17 @@ async def process_photo(msg: types.Message) -> None:
         if not os.path.exists('static'):
             os.mkdir('static')
         img.save(path, format='PNG')
-        img = Image.open(path)
-
-        image = to_prepaate_img(img)
-        outputs = model(image)
-        _, predicted = torch.max(outputs.data, 1)
-        classes = {
-            "tensor(0)": "Этот гриб съедобный",
-            "tensor(1)": "Этот гриб НЕ съедобный!"
-        }
-        print(classes[str(predicted[0])])
-        await msg.answer(classes[str(predicted[0])])
+        img = tf.keras.utils.load_img(path, target_size=(img_height, img_width))
+        img_array = tf.keras.utils.img_to_array(img)
+        img_array = tf.expand_dims(img_array, 0)
+        predictions = model.predict(img_array)
+        score = tf.nn.softmax(predictions[0])
+        await msg.answer("На изображении скорее всего {} ({:.2f}% вероятность)".format(class_names[np.argmax(score)], 100 * np.max(score)))
     except:
         await msg.answer('С вашей фотографией что-то не так, попробуйте использовать другую')
 
-
 normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
-
 
 def to_prepaate_img(img):
     # load image in RGB mode (png files contains additional alpha channel)
