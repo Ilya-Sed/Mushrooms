@@ -59,3 +59,8 @@
 | Мухоморы| 3 | 2,7|
 | Другие| 64 | 59,3|
 ![Статистика](C:\Users\79174\Desktop\Безымянный-1.pdf, 'Статистика отравлений')
+
+## Пример работы бота
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMG16c3c0eTJhbzNodzR4d3BsNXVzZHBrbjRjZTFtNXNzejNsZndkZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2zJLhOGrOTDdLd9RCG/giphy.gif"/>
+</div>
